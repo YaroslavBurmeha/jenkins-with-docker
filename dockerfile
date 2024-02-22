@@ -4,4 +4,4 @@ RUN apt update && apt install -y nginx
 COPY index.html /var/www/html/index.html
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default /etc/nginx/sites-enabled/default
-#CMD service nginx restart
+CMD service nginx restart
