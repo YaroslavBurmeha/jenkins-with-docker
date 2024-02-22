@@ -1,5 +1,6 @@
 FROM debian:12
-EXPOSE 80:80
+EXPOSE 80/tcp
+EXPOSE 80/udp
 RUN apt update && apt install -y nginx
 COPY index.html /var/www/html/index.html
 COPY nginx.conf /etc/nginx/nginx.conf
