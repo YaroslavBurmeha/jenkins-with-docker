@@ -1,4 +1,7 @@
-FROM nginx:1.24.0-bullseye
+FROM debian:12
 EXPOSE 80:80
-COPY index.html /usr/share/nginx/html/index.html
+RUN apt install -y nginx
+COPY index.html /var/www/html/index.html
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY default /etc/nginx/sites-enabled/default
+RUN service nginx restart
