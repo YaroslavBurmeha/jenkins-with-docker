@@ -1,8 +1,7 @@
-FROM debian:12
+FROM nginx:latest
 EXPOSE 80/tcp
-RUN apt update && apt install -y nginx curl
-COPY index.html /var/www/html/index.html
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default /etc/nginx/sites-enabled/default
-CMD service nginx status
-CMD nginx -t
+#COPY index.html /usr/share/nginx/html
+#COPY nginx.conf /etc/nginx/nginx.conf
+#COPY default /etc/nginx/sites-enabled/default
+#CMD service nginx status
+#CMD nginx -t
